@@ -16,7 +16,7 @@ func NewClient(ctx context.Context, host, port, username, password, database, au
 	}
 
 	if username == "" && password == "" {
-		mongoDbUrl = fmt.Sprintf("mongodb://%s%s", host, port) //if we don't have authorization to db
+		mongoDbUrl = fmt.Sprintf("mongodb://%s:%s", host, port) //if we don't have authorization to db
 	} else {
 		mongoDbUrl = fmt.Sprintf("mongodb://%s:%s@%s:%s", username, password, host, port) //if we have authorization to db
 	}
